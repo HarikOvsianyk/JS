@@ -1,7 +1,7 @@
 "use strict";
 
 
-//5 урок
+//5 урок Переменные и строгий режим
 let number = '9';
 let Name = 'Harik';
 const surname = 'Ovsianyk';
@@ -31,7 +31,7 @@ name = 'Kate';
 
 console.log(result);
 
-// 6 lesson 
+// 6 lesson Типы данных
 
 const ovs = {
     name: "Harik",
@@ -45,7 +45,7 @@ let arr = ['plum.pnj', 'orange.jpg', 'apple.bmp'];
 
 console.log(arr[2]);
 
-// 7 lesson
+// 7 lesson простое общение с пользователем
 
 /* alert('Приветствие!'); */
 
@@ -102,7 +102,7 @@ const isChecked = !true,
 
 console.log(isChecked || isClose);
 
-// 13 lesson
+// 13 lesson Условия
 
 // Условие If
 
@@ -172,7 +172,7 @@ while (num51 < 55);
 let num52 = 52;
 for (let i = 1; i < 8; i++) {
     console.log(num52);
-    num52++;;
+    num52++;
 }
 
 let num5 = 5;
@@ -183,3 +183,78 @@ for (let i = 1; i < 10; i++) {
     }
     console.log(i);
 }
+
+// 16 Lesson Функции, стрелочные функции
+let m =20;
+function showFirsMassage (name) {
+    console.log(`Hello ${name}!`);
+    let m = 10;
+    console.log(m);
+}
+
+showFirsMassage('dear Harik');
+showFirsMassage('dear Kate');
+console.log(m);
+
+function calc(a,b) {
+    return (a+b);
+}
+
+console.log(calc(4,5));
+console.log(calc(5,6)%2);
+console.log(calc(1995,1994));
+
+function ret() {
+    let num = 50;
+    return num;
+}
+
+const anotherNum = ret();
+console.log(anotherNum);
+
+console.log(ret());
+
+const logger = function () {
+    console.log('Hello');
+};
+
+logger();
+
+const talc = (a,b) => a+b;
+
+console.log(talc(5,6));
+
+//17 lesson Методы и свойства строк и чисел
+
+const str = 'Harik Ovsyanik';
+const arr1 = [1, 2, 4];
+
+console.log(str.length);
+console.log(arr1.length);
+console.log(str[2]);
+console.log(str.toUpperCase());
+console.log(str.toLowerCase());
+
+const fruit = "Some fruit";
+console.log(fruit.indexOf('fruit')); // показывает с какого индекса начинается искомое слово или буква
+console.log(fruit.indexOf('q'));
+
+const logg = 'Hello world';
+console.log(logg.indexOf('world'));
+console.log(logg.slice(6, 11));//вырезает данные со строк начиная с указаного элемента вплоть до последнего +1не включая
+console.log(logg.slice(6)); // вырезает до конца
+console.log(logg.substring(6, 11)); // тоже что и слайс
+console.log(logg.substr(6, 5)); // указываем с какого индекса начинаем вырезать и сколько индексов вырезаем(как второй аргумент)
+
+const Num = 12.2;
+console.log(Math.round(Num));// округлили до целого числа
+
+const test = '12.2px';
+console.log(parseInt(test));// переводит число в другую систему исчисления
+console.log(parseFloat(test));// возвращает с плавающей точкой значение
+
+
+
+
+
+
