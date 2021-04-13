@@ -253,6 +253,95 @@ const test = '12.2px';
 console.log(parseInt(test));// переводит число в другую систему исчисления
 console.log(parseFloat(test));// возвращает с плавающей точкой значение
 
+//19 lesson Callback - функция, которая должна быть выполнена, после того,как другая функция завершила свое выполнение 
+
+function first() {
+    //Do something
+    setTimeout(function () {
+        console.log(1);
+    }, 500);
+}
+
+function second () {
+    console.log(2);
+}
+
+first();
+second();
+
+function learnJS(lang, callback) {
+    console.log(`I learn ${lang}`);
+    callback();
+}
+
+function done() {
+    console.log('I have finished this lesson!');
+}
+
+learnJS('Javascript', done);
+
+// 20 lesson Объекты, деструктуризация объектов
+
+const options = {
+    name: 'test',
+    width: 1024,
+    height: 1024,
+    colors: {
+        border: 'black',
+        bg: 'red'
+    },
+    makeTest: function () {
+        console.log("test");
+    }
+};
+
+options.name = 'rest';
+console.log(options.name);
+
+/* delete options.name; */
+console.log(options);
+//Метод перебора объекта
+
+
+for (let key in options) {
+    if (typeof(options[key]) === 'object' ) {
+        for (let i in options[key]) {
+            console.log(`Свойство ${i} имеет значение ${options[key][i]}`);
+        } 
+    } else {
+            console.log(`Свойство ${key} имеет значение ${options[key]}`);
+    }
+}
+
+let counter = 0;
+for (let key in options) {
+    if (typeof(options[key]) === 'object' ) {
+        for (let i in options[key]) {
+            console.log(`Свойство ${i} имеет значение ${options[key][i]}`);
+            counter++;
+        } 
+    } else {
+            console.log(`Свойство ${key} имеет значение ${options[key]}`);
+            counter++;
+    }
+}
+
+console.log(counter);
+
+// Выводит свойства в массив, а lenght показывает, сколько их (вместо каунтера)
+
+console.log(Object.keys(options).length);
+
+options.makeTest();
+
+//Деструктуризация объектов - вытаскиваем свойства из объекта
+
+const {border, bg} = options.colors;
+console.log(border);
+
+
+
+
 
 
 
