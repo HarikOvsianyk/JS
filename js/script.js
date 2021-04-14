@@ -451,6 +451,110 @@ console.log(newNumbers);
 console.log(numbers);
 
 
+//Object assign соединяет два объекта
+
+const add = {
+    d: 17,
+    e: 20
+};
+
+console.log(Object.assign(numbers, add));
+console.log(Object.assign({}, add));
+
+//Создание копии массива
+
+const oldArray = ['a', 'b', 'c'];
+const newArray = oldArray.slice();
+
+newArray[1] = 'f';
+console.log(newArray);
+console.log(oldArray);
+
+//Оператор разворота Spread оператор
+
+const video = ['youtube', 'vimeo', 'rutube'],
+      blogs = ['wordpress','livejournal', 'blogger'],
+      internet = [...video, ...blogs, 'vk', 'facebook'],
+      video2 = [...video];
+
+console.log(internet);
+console.log(video2);
+
+function log(a, b, c) {
+    console.log(a);
+    console.log(b);
+    console.log(c);
+}
+
+const num22 = [2, 5, 7];
+
+log(...num22);
+
+const array = ['a', 'b'];
+
+const newAaray = [...array];
+
+console.log(newAaray);
+
+const q = {
+    one: 1,
+    two: 2
+};
+
+const newObj = {...q};
+
+console.log(q);
+
+//23 lesson Основы ООП
+
+let STR = 'some';
+let strObj = new String(STR);
+console.log(typeof(STR));
+console.log(typeof(strObj));
+
+console.dir([1,2 ,3]);
+//Прототип солдата
+const soldier = {
+    health: 400,
+    armor: 100,
+    sayHello: function() {
+        console.log('Hello!');
+    }
+};
+
+const john = {
+    health: 100
+};
+
+john.__proto__ = soldier; // метод прото не используется
+
+
+
+//Современные методы создания прототипа
+
+Object.setPrototypeOf(john, soldier); //прототипом джона назначаем солдата, после формирование Джона
+console.log(john);
+console.log(john.armor);
+john.sayHello();
+
+//Назначаем прототип для Боба на этапе его создания
+
+const newSoldier = {
+    health: 400,
+    armor: 100,
+    sayHello: function() {
+        console.log('Hello!');
+    }
+};
+
+const bob = Object.create(newSoldier);//Создаем новый объект Боб, который будет прототипно наследоваться от новогоСолдата
+
+bob.sayHello();
+
+
+
+
+
 
 
 
