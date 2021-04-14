@@ -340,6 +340,128 @@ const {border, bg} = options.colors;
 console.log(border);
 
 
+// 21 lesson массивы и псевдомассивы
+
+const ARR = [1, 2, 4, 6, 8];
+
+ARR.pop(); //удаляет элемент с конца массива
+ARR.push(10);// добавляет в конец значение указанное в скобках
+ARR[99] = 0;
+
+console.log(ARR);
+console.log(ARR.length);//состоит из последнего индекса в массиве +1
+
+
+
+//Методы перебора массива
+
+for (let i = 0; i < ARR.length; i++ ) {
+    console.log(ARR[i]);
+}
+
+//for of работает с массивоподобными сущностями (массив, строка, псевдомассивы)
+for (let value of ARR) {
+    console.log(value);
+}
+
+// for each - позвляет гибко перебрать все элементы находящиеся внутри массива, в нем не работают break и continue
+
+const Arr = [1, 2, 4, 6, 8];
+
+Arr.forEach(function (item, i, Arr) {
+    console.log(`${i}: ${item} внутри массива ${Arr}`);
+});// где в колббек функции item - значение в массиве, i - его индекс
+
+//Методы перебора массива с его трансформацией (map, filter, every/some, reduce)
+
+const Str = prompt('', '');
+const products = str.split(','); //Разбивает строку на массив
+console.log(products);
+
+// На основании массива формируем большую строку
+const apr = prompt('', '');
+const Products = apr.split(',');
+console.log(Products.join(';'));// получаем строку через точку с запятой
+
+//Метод сортировки
+
+const Str1 = prompt('', '');
+const products1 = Str1.split(',');
+products.sort(); // всегда сортирует элементы массива как строки
+console.log(products1.join(';'));
+
+const Arr2 = [1, 12, 4, 6, 8];
+Arr2.sort(compareNum);
+console.log(Arr2);
+
+
+// Функция сортировки цифр по значению, а не по строкам
+function compareNum (a,b) {
+    return a -b;
+}
+
+//Псевдомассив - это структура, которая хранит данные по порядку. И не имеет типичных методов, как обычный массив.
+
+//22 lesson Передача по ссылке и по значению, Spread оператор
+//ОЧЕНЬ ВАЖНАЯ ТЕМА!!!
+
+let a = 5,
+    b = a;
+
+b = b + 5;
+
+console.log(b);
+console.log(a);
+
+const obj22 = {
+    a: 5,
+    b: 1
+};
+
+const copy = obj22;// на практике видно, что когда мы изменяем копию, мы также модифицируем изначальный объект. Ссылка на уже существующий объект
+
+copy.a = 10;
+
+console.log(copy);
+console.log(obj22);
+
+function Copy(mainObj) {
+    let objCopy = {};
+
+    let key;
+    for(key in mainObj) {
+        objCopy[key] = mainObj[key];
+    }
+    
+    return objCopy;
+}
+
+const numbers = {
+    a:2,
+    b: 5,
+    c: {
+        x: 7,
+        y: 4
+    }
+};
+
+const newNumbers = Copy(numbers);
+newNumbers.a = 10;
+console.log(newNumbers);
+console.log(numbers);
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
